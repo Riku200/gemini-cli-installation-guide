@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
+
+:root {
+    --bg-color: #f8f9fa;
+    --surface-color: #ffffff;
+    --primary-color: #6a11cb;
+    --secondary-color: #2575fc;
+    --text-color: #343a40;
+    --text-muted: #6c757d;
+    --header-font: 'Noto Sans JP', sans-serif;
+    --body-font: 'Noto Sans JP', sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    text-align: center;
+    padding: 5rem 1rem 4rem;
+}
+
+header h1 {
+    margin: 0;
+    font-family: var(--header-font);
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+header p {
+    margin: 1rem 0 0;
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+main {
+    padding: 3rem 1.5rem;
+}
+
+section {
+    background-color: var(--surface-color);
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+h2 {
+    font-family: var(--header-font);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Merit Cards */
+.merit-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--surface-color);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #e9ecef;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+
+.card .icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.card h3 {
+    font-family: var(--header-font);
+    font-size: 1.4rem;
+    margin: 1rem 0 0.5rem;
+    color: var(--text-color);
+}
+
+/* Installation Section */
+code {
+    background-color: #e9ecef;
+    color: #343a40;
+    padding: 1rem;
+    border-radius: 6px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 1rem;
+    display: block;
+    margin-top: 1rem;
+    white-space: pre-wrap;
+    border: 1px solid #dee2e6;
+}
+
+.button {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    transition: filter 0.3s, transform 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.button:hover {
+    filter: brightness(1.1);
+    transform: translateY(-3px);
+}
+
+.help-note {
+    background-color: #e7f0ff;
+    border-left: 4px solid var(--secondary-color);
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.help-note h3 {
+    margin-top: 0;
+    color: var(--secondary-color);
+}
+
+/* Usage Section */
+#usage ul {
+    list-style: none;
+    padding: 0;
+}
+
+#usage li {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-family: monospace;
+    border: 1px solid #e9ecef;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    background-color: var(--surface-color);
+    border-top: 1px solid #e9ecef;
+}

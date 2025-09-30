@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini CLI - 紹介</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>魔法の杖、<br>Gemini CLIへようこそ</h1>
+            <p>パソコン作業が、まるで会話するように、もっと簡単でクリエイティブに。</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about">
+            <h2>Gemini CLIって、なに？</h2>
+            <p>一言でいうと、<strong>「言葉でパソコンを操作できる、魔法の杖」</strong>です。</p>
+            <p>普段、マウスやキーボードで一つずつ行っている作業を、Gemini CLIに「〇〇して」とお願いするだけで、AIが自動で実行してくれます。例えば、チャットで友達に話しかけるような感覚で、複雑な作業も一瞬で終わらせることができるのです。</p>
+        </section>
+
+        <section id="merits">
+            <h2>インストールするメリットは？</h2>
+            <div class="merit-cards">
+                <div class="card">
+                    <h3><span class="icon">🚀</span> 時間を節約できる</h3>
+                    <p>面倒なファイル整理、プログラミングの定型作業、情報収集などを自動化。あなたが本当に集中したいクリエイティブな作業に時間を使えます。</p>
+                </div>
+                <div class="card">
+                    <h3><span class="icon">💡</span> 専門知識がなくても大丈夫</h3>
+                    <p>難しいコマンドを覚えなくても、「こんなことがしたい」と自然な言葉で伝えるだけ。ITが苦手な方でも、プロのような作業が可能です。</p>
+                </div>
+                <div class="card">
+                    <h3><span class="icon">✨</span> アイデアが形になる</h3>
+                    <p>「こんなアプリを作ってみたい」「このデータを分析してほしい」といったアイデアを、すぐに試せます。あなたのひらめきを、その場で形にしましょう。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="installation">
+            <h2>インストール方法</h2>
+            <p>以下の手順で、あなたも魔法の杖を手に入れることができます。</p>
+            <a href="https://www.youtube.com/watch?v=Pn5XwIibkAk" target="_blank" class="button">参考動画を見る (YouTube)</a>
+            <div class="step">
+                <h3>ステップ0: PowerShellを管理者モードで開く</h3>
+                <p>スタートメニュー → PowerShell を右クリック → 「管理者として実行」を選択します。<br>（Node.js を winget でインストールする際に書き込み権限が必要なため）</p>
+            </div>
+            <div class="step">
+                <h3>ステップ1: Node.js v18以上をインストール</h3>
+                <p>まだNode.jsをインストールしていない場合は、以下のコマンドを実行します。</p>
+                <code>winget install -e --id OpenJS.NodeJS.LTS</code>
+                <p>インストール後、バージョンを確認します。</p>
+                <code>node -v</code>
+                <p>v18.x.x 以上が表示されればOKです。</p>
+            </div>
+            <div class="step">
+                <h3>ステップ2: Gemini CLIをインストール</h3>
+                <p>次に、Gemini CLI本体をインストールします。これにより、PCのどこからでも `gemini` コマンドが使えるようになります。</p>
+                <code>npm install -g @google/gemini-cli</code>
+            </div>
+            <div class="step">
+                <h3>ステップ3: 初期設定と動作確認</h3>
+                <p>Google AI Studioで取得したAPIキーを設定し、動作確認を行います。</p>
+                <code>gemini init</code>
+                <p>上記のコマンドを実行するとAPIキーの入力を求められます。入力後、`gemini`とだけ入力して起動すれば、セットアップは完了です。</p>
+                <code>gemini</code>
+            </div>
+            <div class="help-note">
+                <h3>うまくいかない場合は？</h3>
+                <p>インストール中にエラーが出たり、手順が分からなくなった場合は、問題画面のスクリーンショットを撮影し、GeminiやChatGPTなどのAIアシスタントに「このエラーを解決したい」と質問してみてください。解決策を提示してくれることがあります。</p>
+            </div>
+        </section>
+
+        <section id="usage">
+            <h2>例えば、こんなことができます</h2>
+            <p>Gemini CLIを使えば、アイデア次第で可能性は無限に広がります。</p>
+            <ul>
+                <li><code>gemini "このフォルダにある画像をすべてリサイズして"</code></li>
+                <li><code>gemini "今日の天気予報を調べて、結果を教えて"</code></li>
+                <li><code>gemini "簡単な自己紹介サイトのHTMLとCSSを作って"</code></li>
+                <li><code>gemini "この長い文章を3行で要約して"</code></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Gemini CLIプロジェクト</p>
+        </div>
+    </footer>
+</body>
+</html>
