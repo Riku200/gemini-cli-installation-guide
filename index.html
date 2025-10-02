@@ -8,6 +8,11 @@
 </head>
 <body>
     <header>
+        <div class="guide-buttons">
+            <button id="open-install-guide" class="button">インストール手順</button>
+            <button id="open-publish-guide" class="button">サイト公開手順</button>
+            <button id="open-update-guide" class="button">サイト更新手順</button>
+        </div>
         <div class="container">
             <h1>魔法の杖、<br>Gemini CLIへようこそ</h1>
             <p>パソコン作業が、まるで会話するように、もっと簡単でクリエイティブに。</p>
@@ -39,7 +44,28 @@
             </div>
         </section>
 
-        <section id="installation">
+        <section id="usage">
+            <h2>例えば、こんなことができます</h2>
+            <p>Gemini CLIを使えば、アイデア次第で可能性は無限に広がります。</p>
+            <ul>
+                <li><code>gemini "このフォルダにある画像をすべてリサイズして"</code></li>
+                <li><code>gemini "今日の天気予報を調べて、結果を教えて"</code></li>
+                <li><code>gemini "簡単な自己紹介サイトのHTMLとCSSを作って"</code></li>
+                <li><code>gemini "この長い文章を3行で要約して"</code></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Gemini CLIプロジェクト</p>
+        </div>
+    </footer>
+
+    <!-- Installation Guide Modal -->
+    <div id="install-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
             <h2>インストール方法</h2>
             <p>以下の手順で、あなたも魔法の杖を手に入れることができます。</p>
             <a href="https://www.youtube.com/watch?v=Pn5XwIibkAk" target="_blank" class="button">参考動画を見る (YouTube)</a>
@@ -71,24 +97,124 @@
                 <h3>うまくいかない場合は？</h3>
                 <p>インストール中にエラーが出たり、手順が分からなくなった場合は、問題画面のスクリーンショットを撮影し、GeminiやChatGPTなどのAIアシスタントに「このエラーを解決したい」と質問してみてください。解決策を提示してくれることがあります。</p>
             </div>
-        </section>
-
-        <section id="usage">
-            <h2>例えば、こんなことができます</h2>
-            <p>Gemini CLIを使えば、アイデア次第で可能性は無限に広がります。</p>
-            <ul>
-                <li><code>gemini "このフォルダにある画像をすべてリサイズして"</code></li>
-                <li><code>gemini "今日の天気予報を調べて、結果を教えて"</code></li>
-                <li><code>gemini "簡単な自己紹介サイトのHTMLとCSSを作って"</code></li>
-                <li><code>gemini "この長い文章を3行で要約して"</code></li>
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Gemini CLIプロジェクト</p>
         </div>
-    </footer>
+    </div>
+
+    <!-- Publishing Guide Modal -->
+    <div id="publish-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>GitHub Pagesでサイトを公開する</h2>
+            <p>作成したサイトを、GitHub Pagesを使ってインターネットに公開する手順です。</p>
+            
+            <h3>前提条件</h3>
+            <ul>
+                <li>GitがPCにインストールされていること。</li>
+                <li>GitHubのアカウントを持っていること。</li>
+            </ul>
+
+            <div class="step">
+                <h3>ステップ1: GitHubで新しいリポジトリを作成する</h3>
+                <p>まず、公開したいファイルを置くための場所（リポジトリ）をGitHub上に作成します。</p>
+                <ol>
+                    <li>GitHubにログインし、ページの右上にある「+」アイコンをクリックして「New repository」を選択します。</li>
+                    <li><strong>Repository name</strong> に好きな名前（例: my-awesome-site）を入力します。</li>
+                    <li><strong>Public</strong> を選択します。（GitHub PagesはPublicリポジトリなら無料で利用できます）</li>
+                    <li><strong>Create repository</strong> ボタンをクリックします。</li>
+                </ol>
+                <p>作成が完了すると、リポジトリのURLが表示されます。このURLは次のステップで使います。</p>
+            </div>
+
+            <div class="step">
+                <h3>ステップ2: PowerShellでコマンドを実行する</h3>
+                <p>ここからのコマンドをPowerShellに順番にコピー＆ペーストして実行してください。</p>
+                
+                <p>1. 公開したいファイルがあるフォルダに移動します</p>
+                <code>cd C:\path\to\your\project</code>
+                
+                <p>2. Gitリポジトリを初期化します</p>
+                <code>git init</code>
+                
+                <p>3. フォルダ内のすべてのファイルをGitの管理対象に追加します</p>
+                <code>git add .</code>
+                
+                <p>4. ファイルをコミット（セーブのようなもの）します</p>
+                <code>git commit -m "Initial commit"</code>
+                
+                <p>5. デフォルトのブランチ名を「main」に変更します</p>
+                <code>git branch -M main</code>
+                
+                <p>6. GitHubで作成したリモートリポジトリを登録します<br><small>※下記の &lt;あなたのユーザー名&gt; と &lt;リポジトリ名&gt; をご自身のものに書き換えてください</small></p>
+                <code>git remote add origin https://github.com/&lt;あなたのユーザー名&gt;/&lt;リポジトリ名&gt;.git</code>
+                
+                <p>7. GitHubにファイルをアップロード（プッシュ）します</p>
+                <code>git push -u origin main</code>
+            </div>
+
+            <div class="step">
+                <h3>ステップ3: GitHub Pagesを有効にする</h3>
+                <p>最後に、アップロードしたファイルをWebページとして公開する設定を行います。</p>
+                <ol>
+                    <li>ステップ1で作成したご自身のGitHubリポジトリのページを開きます。</li>
+                    <li>タブの <strong>Settings</strong> をクリックします。</li>
+                    <li>左側のメニューから <strong>Pages</strong> をクリックします。</li>
+                    <li><strong>Source</strong> の項目で、ドロップダウンメニューを <strong>Deploy from a branch</strong> にします。</li>
+                    <li><strong>Branch</strong> の項目で、ブランチを <strong>main</strong> 、フォルダを <strong>/(root)</strong> に設定し、<strong>Save</strong> ボタンをクリックします。</li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h3>ステップ4: 公開されたページを確認する</h3>
+                <p>設定を保存して数分待つと、ページの上部に "Your site is live at ..." というメッセージと公開用のURLが表示されます。</p>
+                <p>表示されたURL（ <code>https://&lt;あなたのユーザー名&gt;.github.io/&lt;リポジトリ名&gt;/</code> ）にアクセスすると、ご自身が作成したWebページが表示されます。</p>
+                <p>これで公開は完了です！🎉</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Website Update Guide Modal -->
+    <div id="update-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>公開済みサイトの更新方法</h2>
+            <p>サイトの変更は、最初の公開手順ととても似ていて、一度覚えてしまえば簡単です。</p>
+
+            <div class="step">
+                <h3>サイト更新の基本フロー</h3>
+                <p>サイトの更新は、以下の3つのステップで行います。</p>
+                <ol>
+                    <li><strong>パソコン上のファイルを編集する:</strong><br>プロジェクトフォルダ内のHTMLやCSSファイルなどを直接編集・保存します。</li>
+                    <li><strong>変更内容を記録（コミット）する:</strong><br>「どこをどう変更したか」という記録をGitに残します。</li>
+                    <li><strong>記録をGitHubにアップロード（プッシュ）する:</strong><br>記録をGitHubに送ると、GitHub Pagesが自動的にサイトを新しい内容に更新してくれます。</li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h3>具体的な手順（PowerShell）</h3>
+                <p>今後、サイトを更新する際は、以下のコマンドをPowerShellで実行してください。</p>
+
+                <p>1. 作業フォルダに移動します</p>
+                <code>cd C:\path\to\your\project</code>
+
+                <p>2. 変更されたすべてのファイルをGitの管理対象に追加します</p>
+                <code>git add .</code>
+
+                <p>3. 変更内容を記録（コミット）します<br><small>※ " "の中のメッセージは、何を変更したか分かるように書き換えてください（例: "ヘッダーのテキストを修正"）</small></p>
+                <code>git commit -m "サイトの更新"</code>
+
+                <p>4. 変更内容をGitHubにアップロード（プッシュ）します</p>
+                <code>git push</code>
+                <p>これだけです！<code>git push</code> を実行後、数分待ってからご自身のサイトにアクセスすると、変更が反映されているはずです。</p>
+            </div>
+
+            <div class="help-note">
+                <h3>ポイント</h3>
+                <p>ファイルを変更したら、必ずこの手順で <code>git push</code> まで行う必要があります。ローカルファイルを変更しただけでは、公開されているWebサイトは更新されません。</p>
+                <p><code>git commit -m "ここ"</code> のメッセージは、後から変更履歴を見返したときに分かりやすいように、具体的な変更内容を書くことをお勧めします。</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
